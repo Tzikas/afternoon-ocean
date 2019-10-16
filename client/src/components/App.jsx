@@ -9,6 +9,9 @@ import Signup from './pages/Signup'
 import api from '../api'
 import logo from '../logo.svg'
 import axios from 'axios'
+import serverUrl from '../configServer.js'
+
+console.log(serverUrl, process.env)
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -22,7 +25,7 @@ export default class App extends Component {
   }
   componentDidMount() {
     axios
-      .post('http://localhost:5000/api/saveSomething', {
+      .post(`${serverUrl}/saveSomething`, {
         coolBeans: 'delicious',
         yikes: 'awesome',
       })
