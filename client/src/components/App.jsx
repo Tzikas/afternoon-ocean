@@ -24,6 +24,7 @@ export default class App extends Component {
     axios
       .post('http://localhost:5000/api/saveSomething', {
         coolBeans: 'delicious',
+        yikes: 'awesome',
       })
       .then(res => {
         console.log(res)
